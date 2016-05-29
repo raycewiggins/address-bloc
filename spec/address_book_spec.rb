@@ -10,6 +10,16 @@ require_relative '../models/address_book'
        expect(entry.email).to eq expected_email
    end
 
+   describe "anihilate" do
+     it "deletes all entries" do
+       book.add_entry("Name", "Phone", "Email")
+       book.add_entry("Name_2", "Phone_2", "Email_2")
+       book.add_entry("Name_3", "Phone_3", "Email_3")
+
+       book.anihilate
+       expect(book.entries.size).to eq 0
+     end
+   end
 
    describe "attributes" do
      it "responds to entries" do

@@ -4,9 +4,12 @@ require "csv"
 class AddressBook
   attr_reader :entries
 
+  def anihilate
+    @entries = []
+  end
 
   def initialize
-       @entries = []
+    @entries = []
   end
 
   def add_entry(name, phone_number, email)
